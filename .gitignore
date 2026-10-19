@@ -1,0 +1,12 @@
+
+# Publish safety (added when preparing the public release)
+.env
+.env.*
+!.env.example
+*.bak*
+*.pfx
+*.pem
+*.key
+*.p12
+node_modules/
+target/

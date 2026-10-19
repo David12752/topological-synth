@@ -1,0 +1,24 @@
+[workspace]
+members = [".", "xtask"]
+
+[package]
+name = "topological_synth_core"
+version = "0.1.0"
+edition = "2021"
+autobins = false
+
+[lib]
+crate-type = ["cdylib", "lib"]
+
+[[bin]]
+name = "topological_synth_core"
+path = "src/main.rs"
+
+[dependencies]
+nih_plug = { git = "https://github.com/robbert-vdh/nih-plug.git", features = ["standalone"] }
+
+[profile.release]
+lto = "thin"
+codegen-units = 1
+panic = "abort"
+strip = "symbols"
